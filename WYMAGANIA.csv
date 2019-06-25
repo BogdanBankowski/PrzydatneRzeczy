@@ -2,3 +2,10 @@ Baza narzedzi dla programistow webowych, Wyswietlana w tabelce,
 Tabelka: Nazwa,Link do tego narzedzia, opis, tagi, lajki,
 Mozna dodawac nowe narzedzia przez form, sortowanie narzedzi po tagach(dropdown)
 i sortowanie po lajkach opcjonalnie edycja
+
+TODO:
+Lajkowanie postow
+Multiple tags
+Sortowanie po lajkach
+Sortowanie po tagach
+Edycja komorek(opcjonalnie)

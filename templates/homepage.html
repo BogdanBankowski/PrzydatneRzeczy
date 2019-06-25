@@ -10,12 +10,13 @@
         {% for item in DATA_HEADERS %}
             <th>{{item}}</th>
         {% endfor %}
-
+            <th>Like</th>
         {% for item in data %}
             <tr>
                 {% for cell in item %}
                     <td>{{ cell }}</td>
                 {% endfor %}
+            <td><a href="/like">Like it</a></td>
             </tr>
         {% endfor %}
     </table>

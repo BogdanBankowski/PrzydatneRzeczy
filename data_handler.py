@@ -15,6 +15,9 @@ def get_whole_table():
 def add_data_to_file(data):
     with open(DATA_FILE_PATH, 'a') as file:
         file.write('\n')
+        i=0
         for item in data:
             file.write(item)
-            file.write(';')
+            if i != len(data)-1:
+                file.write(';')
+            i += 1            #Taka logika zeby nie dodawal ';' na koncu linijki bo dodawalo to pusty wyraz do tabeli
