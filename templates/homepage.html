@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homepage</title>
+</head>
+<body>
+    <h1>Dodaj nowe narzędzie do zestawienia</h1>
+    <table>
+        {% for item in DATA_HEADERS %}
+            <th>{{item}}</th>
+        {% endfor %}
+
+        {% for item in data %}
+            <tr>
+                {% for cell in item %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
