@@ -5,6 +5,24 @@
     <title>add</title>
 </head>
 <body>
+<form action="/add" method="post">
+    <label for="Nazwa">Nazwa narzędzia:</label>
+    <input type="text" id="Nazwa" name="Nazwa" maxlength="20"><br>
+    <label for="Link">Link do szczegółowych informacji:</label>
+    <input type="text" id="Link" name="Link" maxlength="60"><br>
+    <label for="Opis">Szczegółowy opis narzędzia:</label><br>
+    <textarea id="Opis" name="Opis" rows="8" cols="80"></textarea><br>
+    <label for="Tagi">Tagi:</label><br>
+    <select name="Tagi" id="Tagi">
+        <option value="Tag1">Tag1</option>
+        <option value="Tag2">Tag2</option>
+        <option value="Tag3">Tag3</option>
+        <option value="Tag4">Tag4</option>
+    </select><br><br>
+    <button type="submit">Zapisz narzędzie</button>
 
+
+
+</form>
 </body>
 </html>
