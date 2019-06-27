@@ -16,7 +16,9 @@
                 {% for cell in item %}
                     <td>{{ cell }}</td>
                 {% endfor %}
-            <td><a href="/like/<{{ item[0] }}>">Like it</a></td>
+                <td></td>
+                <td>{{ likes[item[0]] }}</td>
+                <td><a href="/like/<{{ item[0] }}>">Like it</a></td>
             </tr>
         {% endfor %}
     </table>

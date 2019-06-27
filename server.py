@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    data = data_handler.get_whole_table()
-    return render_template('homepage.html', data=data, DATA_HEADERS=data_handler.DATA_HEADERS)
+    data = data_handler.get_whole_table(data_handler.DATA_FILE_PATH)
+    return render_template('homepage.html', data=data, DATA_HEADERS=data_handler.DATA_HEADERS, likes = data_handler.get_whole_dictionary(data_handler.LIKES_FILE_PATH))
 
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -19,10 +19,9 @@ def add():
         data_to_add.append(unique_id)
         for i in range(len(data_handler.DATA_TO_LOAD_FROM_USER)):
             data_to_add.append(request.form[data_handler.DATA_TO_LOAD_FROM_USER[i]])
-        data_to_add.append(str(likes[data_to_add[0]]))
         data_handler.add_data_to_file(data_to_add)
         return redirect('/')
-    return render_template('add.html', likes=likes)
+    return render_template('add.html')
 
 
 @app.route('/like/<post_id>')
