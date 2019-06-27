@@ -21,7 +21,8 @@ def add_data_to_file(data):
             if i != len(data)-1:
                 file.write(';')
             i += 1            #Taka logika zeby nie dodawal ';' na koncu linijki bo dodawalo to pusty wyraz do tabeli
-
+    with open(LIKES_FILE_PATH, 'a') as file:
+        file.write(data[0]+';0')
 def raise_likes_quantity_by_one(post_id):
     with open(LIKES_FILE_PATH, 'r') as file:
         post_id = post_id[1:-1]
@@ -45,6 +46,7 @@ def get_whole_dictionary(path):
             temp_line[1] = temp_line[1].rstrip('\n')
             result[temp_line[0]] = temp_line[1]
     return result
+
 
 
 
