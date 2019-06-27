@@ -47,8 +47,14 @@ def get_whole_dictionary(path):
             result[temp_line[0]] = temp_line[1]
     return result
 
-
-
-
-
+def data_sort_by_likes(whole_list, whole_dict):
+    result = []
+    sorted_by_id_list = sorted(whole_dict.items(), key=lambda kv: int(kv[1]), reverse=True)
+    non_sorted_list = whole_list
+    for item in sorted_by_id_list:
+        for i in range(len(non_sorted_list)):
+            if item[0] == non_sorted_list[i][0]:
+                result.append(non_sorted_list[i])
+                break
+    return result
 

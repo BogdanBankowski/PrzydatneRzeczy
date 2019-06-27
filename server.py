@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
     data = data_handler.get_whole_table(data_handler.DATA_FILE_PATH)
-    return render_template('homepage.html', data=data, DATA_HEADERS=data_handler.DATA_HEADERS, likes = data_handler.get_whole_dictionary(data_handler.LIKES_FILE_PATH))
+    return render_template('homepage.html', data=data_handler.data_sort_by_likes(data, data_handler.get_whole_dictionary(data_handler.LIKES_FILE_PATH)), DATA_HEADERS=data_handler.DATA_HEADERS, likes = data_handler.get_whole_dictionary(data_handler.LIKES_FILE_PATH))
 
 
 @app.route('/add', methods=['GET', 'POST'])
